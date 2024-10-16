@@ -1,0 +1,79 @@
+/* Estilos generales para el carrito de compras */
+.carro-compra-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #2ecc71;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li span {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.total {
+  text-align: right;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #2ecc71;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.carrito-vacio {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+  
+  

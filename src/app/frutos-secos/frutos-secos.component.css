@@ -1,0 +1,42 @@
+/* Estilos para la página de frutos secos */
+.frutos-secos-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.fruto-seco-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.fruto-seco-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fruto-seco-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.fruto-seco-card h3 {
+  font-size: 1.5rem;
+  color: #2b7a0b;
+}
+
+.fruto-seco-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.fruto-seco-card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #45a049;
+}

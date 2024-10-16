@@ -1,0 +1,15 @@
+<h2>Listado de Verduras</h2>
+
+
+<button (click)="ordenarPorNombre()">Ordenar por Nombre</button>
+<button (click)="ordenarPorCosto()">Ordenar por Costo</button>
+
+<div class="verdura-list">
+  <div class="verdura-card" *ngFor="let verdura of verduras">
+    <img [src]="verdura.imagenUrl" alt="{{ verdura.nombre }}" />
+    <h3>{{ verdura.nombre }}</h3>
+    <p>{{ verdura.descripcion }}</p>
+    <p><strong>Precio: </strong> ${{ verdura.costo }}</p>
+    <button (click)="agregarAlCarro(verdura)">Agregar al Carrito</button>
+  </div>
+</div>

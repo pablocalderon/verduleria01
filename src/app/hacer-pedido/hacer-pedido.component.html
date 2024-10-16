@@ -1,0 +1,44 @@
+<h2>Formulario de Pedido</h2>
+
+<form [formGroup]="pedidoForm" (ngSubmit)="enviarPedido()">
+  
+  <div>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" formControlName="nombre" placeholder="Ingresa tu nombre" />
+    <div *ngIf="pedidoForm.get('nombre')?.invalid && pedidoForm.get('nombre')?.touched">
+      <small *ngIf="pedidoForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+      <small *ngIf="pedidoForm.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
+    </div>
+  </div>
+
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" placeholder="Ingresa tu email" />
+    <div *ngIf="pedidoForm.get('email')?.invalid && pedidoForm.get('email')?.touched">
+      <small *ngIf="pedidoForm.get('email')?.errors?.['required']">El email es obligatorio.</small>
+      <small *ngIf="pedidoForm.get('email')?.errors?.['email']">Debe ser un email válido.</small>
+    </div>
+  </div>
+
+ 
+  <div>
+    <label for="productos">Selecciona Productos</label>
+    <select id="productos" formControlName="productos">
+      <option value="">Selecciona un producto</option>
+      <option *ngFor="let producto of productosDisponibles" [value]="producto">{{ producto }}</option>
+    </select>
+    <div *ngIf="pedidoForm.get('productos')?.invalid && pedidoForm.get('productos')?.touched">
+      <small *ngIf="pedidoForm.get('productos')?.errors?.['required']">Debes seleccionar al menos un producto.</small>
+    </div>
+  </div>
+
+  
+  <div>
+    <label for="comentario">Comentario (opcional)</label>
+    <textarea id="comentario" formControlName="comentario" rows="4" placeholder="Escribe un comentario adicional (opcional)"></textarea>
+  </div>
+
+
+  <button type="submit" [disabled]="pedidoForm.invalid">Hacer Pedido</button>
+</form>

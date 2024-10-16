@@ -1,0 +1,23 @@
+<div class="carro-compra-container">
+  <h2>Carrito de Compras</h2>
+
+  <div *ngIf="productos.length > 0; else carritoVacio">
+    <ul>
+      <li *ngFor="let producto of productos">
+        {{ producto.nombre }} <span>${{ producto.costo }}</span>
+      </li>
+    </ul>
+    
+   <div class="total">
+    <strong>Total:</strong> ${{total}}
+   </div>
+
+    <button (click)="limpiarCarrito()">Vaciar Carrito</button>
+  </div>
+
+  <ng-template #carritoVacio>
+    <p class="carrito-vacio">El carrito está vacío.</p>
+  </ng-template>
+</div>
+
+  

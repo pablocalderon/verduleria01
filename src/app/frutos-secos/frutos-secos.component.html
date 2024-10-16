@@ -1,0 +1,14 @@
+<h2>Listado de Frutos Secos</h2>
+
+<!-- Botones para ordenar -->
+<button (click)="ordenarPorNombre()">Ordenar por Nombre</button>
+<button (click)="ordenarPorCosto()">Ordenar por Costo</button>
+<!-- Listado de frutos secos -->
+<div class="fruto-seco-list">
+  <div class="fruto-seco-card" *ngFor="let fruto of frutosSecos">
+    <img [src]="fruto.imagenUrl" alt="{{ fruto.nombre }}" />
+    <h3>{{ fruto.nombre }}</h3>
+    <p>{{ fruto.descripcion }}</p>
+    <p><strong>Precio:</strong> ${{ fruto.costo }}</p>
+  </div>
+</div>
